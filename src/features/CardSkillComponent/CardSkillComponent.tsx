@@ -20,7 +20,8 @@ export const CardSkillComponent: FC<CardSkillComponentProps> = memo(
         return;
       }
 
-      navigate(`/favorite/${person.id}`);
+      navigate(`/skill/${person.id}`, { replace: true });
+      window.location.reload();
     };
 
     if (!person) {
