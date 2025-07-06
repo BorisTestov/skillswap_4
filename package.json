@@ -15,8 +15,7 @@
     "format": "prettier --write .",
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",
-    "deploy": "npm run build && gh-pages -d dist",
-    "predeploy": "rm -rf dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "clsx": "^2.1.1",

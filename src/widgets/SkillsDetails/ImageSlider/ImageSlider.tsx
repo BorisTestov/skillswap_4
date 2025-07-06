@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ImageSlider.module.css';
+import { getImageUrl } from '@shared/lib/utils/imageUtils';
 
 interface ImageSliderProps {
   images: string[];
@@ -35,7 +36,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
           ‹
         </button>
         <img
-          src={images[currentIndex]}
+          src={getImageUrl(images[currentIndex])}
           alt="Main"
           className={styles.mainImage}
         />
@@ -48,7 +49,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
         {visibleThumbnails.map(({ img, idx }) => (
           <img
             key={idx}
-            src={img}
+            src={getImageUrl(img)}
             alt={`Thumbnail ${idx}`}
             onClick={() => handleThumbnailClick(idx)}
             className={styles.thumbnail}
@@ -59,7 +60,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
           <div
             onClick={() => handleThumbnailClick(remaining[0].idx)}
             className={styles.moreThumbnail}
-            style={{ backgroundImage: `url(${nextPreviewImage})` }}
+            style={{ backgroundImage: `url(${getImageUrl(nextPreviewImage)})` }}
           >
             <div className={styles.moreOverlay}>+{remaining.length}</div>
           </div>

@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect, useCallback, useMemo } from 'react';
 import styles from './../CardUserInfo/CardUserInfo.module.css';
 import type { TCardUserInfoProps } from './../types';
 import { readSkillColorClass } from './../../../lib/db/skills/utils';
+import { getImageUrl } from '@shared/lib/utils/imageUtils';
 import clsx from 'clsx';
 
 const INITIALLY_VISIBLE_SKILLS_COUNT = 2;
@@ -79,7 +80,7 @@ const CardUserInfo: FC<TCardUserInfoProps> = ({
     <div className={styles.card_userInfo}>
       <div className={styles.block_userInfo}>
         <img
-          src={avatarUrl}
+          src={getImageUrl(avatarUrl)}
           alt={`Аватар пользователя ${name}`}
           className={styles.avatar_user}
           loading="lazy"
