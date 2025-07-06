@@ -20,4 +20,7 @@ export default defineConfig({
       '@widgets': path.resolve(__dirname, './src/widgets'),
     },
   },
+  build: {
+    outDir: 'dist',
+  }
 });
